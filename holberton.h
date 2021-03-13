@@ -11,7 +11,7 @@
 typedef struct param_manager
 {
 	char *param;
-	void (*f)(va_list args);
+	void (*f)(va_list args, int *count_p);
 } param;
 
 /* Prototypes  */
