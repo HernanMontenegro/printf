@@ -27,7 +27,7 @@ int _printf(char *str, ...)
 			*count_p = *count_p + 1;
 			continue;
 		}
-		/* this while will execute if current char is '%'  */
+		/* this for will execute if current char is '%'  */
 		for (j = 0; j < 4; j++)
 		{
 			if (*params[j].param[0] == str[i + 1])
