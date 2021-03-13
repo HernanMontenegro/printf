@@ -37,7 +37,7 @@ int _printf(char *str, ...)
 		/* this for will execute if current char is '%'  */
 		for (j = 0; j < 4; j++)
 		{
-			if (*params[j].param[0] == str[i + 1])
+			if (*params[j].param == str[i + 1])
 				params[j].f(args);
 		}
 		_putchar(str[i + 1]);

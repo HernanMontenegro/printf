@@ -8,7 +8,8 @@
 #include <stddef.h>
 
 /* Struct definition named param_manager, type: param  */
-#typedef struct param_manager
+
+typedef struct param_manager
 {
 	char *param;
 	void (*f)(va_list args);
