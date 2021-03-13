@@ -39,7 +39,7 @@ int _printf(char *str, ...)
 		for (j = 0; j < 4; j++)
 		{
 			if (*params[j].param == str[i + 1])
-				params[j].f(args);
+				params[j].f(args, count_p);
 		}
 		_putchar(str[i + 1]);
 		*count_p = *count_p + 1;
