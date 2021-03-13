@@ -43,6 +43,7 @@ int _printf(char *str, ...)
 		}
 		_putchar(str[i + 1]);
 		*count_p = *count_p + 1;
+		i++;
 	}
 	va_end(args);
 
