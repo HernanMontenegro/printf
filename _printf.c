@@ -1,7 +1,11 @@
 #include "holberton.h"
 
 /**
-*
+* _printf: the giant printf programmed by 2 guys very hard!!
+* @str: basic string parameter
+* @...: the unknown amount of parameters representation
+* -------------------------------------------
+* Return: amount of characters printed, -1 if fails
 */
 int _printf(char *str, ...)
 {
@@ -17,6 +21,9 @@ int _printf(char *str, ...)
 	int *count_p = &count;
 
 	va_start(args, str);
+
+        if (!str)
+                return (-1);
 
 	for (i = 0; str && str[i]; i++)
 	{
@@ -36,4 +43,6 @@ int _printf(char *str, ...)
 		_putchar(str[i + 1]);
 	}
 	va_end(args);
+
+        return (count);
 }
