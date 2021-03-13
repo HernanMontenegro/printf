@@ -8,7 +8,6 @@
 #include <stddef.h>
 
 /* Struct definition named param_manager, type: param  */
-
 typedef struct param_manager
 {
 	char *param;
@@ -18,6 +17,7 @@ typedef struct param_manager
 /* Prototypes  */
 int _putchar(char c);
 int _printf(char *str, ...);
+void print_char(char c, int *count_p);
 void print_int(int n, int *count_p);
 void print_str(char *str, int *count_p);
 
