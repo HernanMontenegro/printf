@@ -27,7 +27,7 @@ void int_process(int n, int *p)
 /* recursive */
 	int_process(n, p);
 /* end, prints and counts */
-	_putchar(m);
+	_putchar(m + '0');
 	*p = *p + 1;
 }
 
