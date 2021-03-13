@@ -42,6 +42,7 @@ int _printf(char *str, ...)
 				params[j].f(args);
 		}
 		_putchar(str[i + 1]);
+		*count_p = *count_p + 1;
 	}
 	va_end(args);
 
