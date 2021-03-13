@@ -25,7 +25,7 @@ void int_process(int n, int *p)
 	m = n % 10;
 	n = n / 10;
 /* recursive */
-	print_int(n, p);
+	int_process(n, p);
 /* end, prints and counts */
 	_putchar(m);
 	*p = *p + 1;
