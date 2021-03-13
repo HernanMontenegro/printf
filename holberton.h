@@ -11,15 +11,15 @@
 typedef struct param_manager
 {
 	char *param;
-	void (*f)(va_list args);
+	void (*f)(va_list args, );
 } param;
 
 /* Prototypes  */
 int _putchar(char c);
 int _printf(char *str, ...);
-void print_char(char c, int *count_p);
-void print_int(int n, int *count_p);
-void print_str(char *str, int *count_p);
+void print_char(va_list args, int *count_p);
+void print_int(va_list args, int *count_p);
+void print_str(va_list args, int *count_p);
 
 
 #endif /* HEADER_H */
