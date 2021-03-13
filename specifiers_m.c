@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * print_int - prints an int and keeps count
+ * print_process - prints an int and keeps count
  * @n: Number to print
  * @p: pointer to count variable
  *
  * Return: d
  */
-void print_int(int n, int *p)
+void int_process(int n, int *p)
 {
 	int m;
 
@@ -31,16 +31,29 @@ void print_int(int n, int *p)
 	*p = *p + 1;
 }
 
-
 /**
- * print_str - prints a string
- * @str: Number to print
+ * print_int - prints an int and keeps count
+ * @args: List to get va_arg
  * @p: pointer to count variable
  *
  */
-void print_str(char *str, int *p)
+
+void print_int(va_list args, int *p)
+{
+	int_process(va_arg(args, int), *p);
+}
+
+
+/**
+ * print_str - prints a string
+ * @args: List to get va_arg
+ * @p: pointer to count variable
+ *
+ */
+void print_str(va_list args, int *p)
 {
 	int i;
+	char *str = va_arg(args, char *);
 
 	if (!str)
 		return;
@@ -54,13 +67,13 @@ void print_str(char *str, int *p)
 
 /**
  * print_char - prints a char
- * @c: char to print
+ * @args: List to get va_arg
  * @p: pointer to count
  *
  */
 
-void print_char(char c, int *p)
+void print_char(va_list args, int *p)
 {
-	_putchar(c);
+	_putchar(va_arg(args, int));
 	*p = *p + 1;
 }
