@@ -51,3 +51,16 @@ void print_str(char *str, int *p)
 		*p = *p + 1;
 	}
 }
+
+/**
+ * print_char - prints a char
+ * @c: char to print
+ * @p: pointer to count
+ *
+ */
+
+void print_char(char c, int *p)
+{
+	_putchar(c);
+	*p = *p + 1;
+}
