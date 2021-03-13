@@ -19,6 +19,7 @@ int _putchar(char c);
 int _printf(char *str, ...);
 void print_char(va_list args, int *count_p);
 void print_int(va_list args, int *count_p);
+void int_process(int n, int *count_p);
 void print_str(va_list args, int *count_p);
 
 
