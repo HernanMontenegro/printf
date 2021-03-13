@@ -75,6 +75,8 @@ void print_str(va_list args, int *p)
 
 void print_char(va_list args, int *p)
 {
-	_putchar(va_arg(args, int));
+	char c = va_arg(args, int);
+
+	_putchar(c);
 	*p = *p + 1;
 }
