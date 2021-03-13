@@ -38,12 +38,21 @@ int _printf(char *str, ...)
 		/* This for will execute if current char is '%'  */
 		for (j = 0; j < 4; j++)
 		{
+			/* Checks if param is valid */
 			if (*params[j].param == str[i + 1])
+			{
 				params[j].f(args, count_p);
+				i++;
+				break;
+			}
 		}
-		_putchar(str[i + 1]);
-		*count_p = *count_p + 1;
-		i++;
+		/* If param isn't valid, prints next character and continues */
+		if (j == 4)
+		{
+			_putchar(str[i + 1]);
+			*count_p = *count_p + 1;
+			i++;
+		}
 	}
 	va_end(args);
 
