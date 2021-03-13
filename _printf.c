@@ -13,32 +13,27 @@ int _printf(char *str, ...)
 		{"d", print_int},
 		{"i", print_int},
 	};
-	int i = 0, j = 0, count = 0;
+	int i, j, count = 0;
 	int *count_p = &count;
 
 	va_start(args, str);
 
-	while (str && str[i])
+	for (i = 0; str && str[i]; i++)
 	{
 		/* if current char isn't '%' print normally  */
 		if (str[i] != '%')
 		{
 			_putchar(str[i]);
 			*count_p = *count_p + 1;
-			i++;
 			continue;
 		}
 		/* this while will execute if current char is '%'  */
-		while (j < 4)
+		for (j = 0; j < 4; j++)
 		{
 			if (*params[j].param[0] == str[i + 1])
 				params[j].f(args);
-			j++;
 		}
 		_putchar(str[i + 1]);
-
-		j = 0;
-		i++;
 	}
 	va_end(args);
 }
