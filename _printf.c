@@ -25,13 +25,13 @@ int _printf(char *str, ...)
 		{
 			_putchar(str[i]);
 			*count_p = *count_p + 1;
-			j++;
+			i++;
 			continue;
 		}
 		/* this while will execute if current char is '%'  */
 		while (j < 4)
 		{
-			if (*params[j].param == str[i + 1])
+			if (*params[j].param[0] == str[i + 1])
 				params[j].f(args);
 			j++;
 		}
