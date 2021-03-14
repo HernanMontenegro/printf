@@ -1,0 +1,82 @@
+.TH _PRINTF 3  2021-13-03 "DANIEL AND DREADZITO" "Linux Programmer's Manual"
+.SH NAME
+_printf \- formatted output conversion
+.SH SYNOPSIS
+.B #include "holberton.h"
+.sp
+.BI "int _printf(const char *" format ", ...);"
+.br
+.SH DESCRIPTION
+Are you tired of using putchar? you want to print almost
+.BR EVERYTHING?
+dont waste your time!!
+.br
+the super
+.I _printf
+developed by DreadZitoDev and KsualBoy has reached the million of usages in professional coding.
+Use it with moderation... some people has suffer from epileptical attacks because of the
+perfection and MESSY code of our function.
+
+.SS RETURN VALUE
+Upon successful return, these functions return the number of characters
+printed (excluding the null byte used to end output to strings).
+If an output error is encountered, -1 is returned.
+
+.SS FORMAT
+It just print strings like a traditional print function... but you can use 
+.BR specifiers
+for printing
+.I variables
+you heard it right!
+.I variables
+adding a (
+.BR %
+) in front of a specifier character. 
+.br
+Each argument given in 
+.I _printf
+corresponds properly with the conversion specifier, it starts from the first argument given to
+the last one. Here is a little example:
+.sp
+.I code
+:
+_printf("once upon a time, over %s the %dth...", "october", 25);
+.sp
+.I output
+:
+once upon a time, over october the 25th...
+.sp
+
+.SS OPTIONS
+With 
+.I _printf
+you have saveral formats, all setted by the correct specifier after the 
+.BR %
+ character.
+.TP
+.B %c
+Includes a char variable type in your string (char argument is requiered)
+.TP
+.B %s
+Includes an char [] or char * variable type in your string (char [] or char * argument is requiered)
+.TP
+.B %%
+What? are you kidding? this will just print an
+.I %
+and that's it.
+.TP
+.B %d
+Includes an int variable type in your string (int argument is requiered)
+.TP
+.B %i
+Also includes an int variable type in your string (int argument is requiered)
+
+.SS BUGS
+Of course it doesn't have any bugs.
+
+.SS SEE ALSO
+.TP
+.I DreadZitoDev - Hernan Montenegro
+.TP
+.I KsualBoy - Daniel Millan
+
