@@ -17,6 +17,7 @@ int _printf(char *str, ...)
 		{"d", print_int},
 		{"i", print_int},
 		{"u", print_unsigned_int},
+		{"o", print_octal_int},
 	};
 	int i, j, count = 0, params_length;
 	int *count_p = &count;

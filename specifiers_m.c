@@ -32,7 +32,7 @@ void int_process(int n, int *p)
 }
 
 /**
- * print_int - prints an int and keeps count
+ * print_int - supply the value to the print function
  * @args: List to get va_arg
  * @p: pointer to count variable
  *
