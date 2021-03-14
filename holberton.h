@@ -18,9 +18,12 @@ typedef struct param_manager
 
 int _putchar(char c);
 int _printf(char *str, ...);
+
 void print_char(va_list, int *);
 void print_int(va_list, int *);
 void int_process(int, int *);
+void print_unsigned_int(va_list, int *);
+void unsigned_int_process(unsigned int, int *);
 void print_str(va_list, int *);
 
 #endif /* HEADER_H */

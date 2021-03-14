@@ -16,8 +16,9 @@ int _printf(char *str, ...)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
+		{"u", print_unsigned_int},
 	};
-	int i, j, count = 0;
+	int i, j, count = 0, params_length;
 	int *count_p = &count;
 
 	va_start(args, str);
@@ -25,6 +26,9 @@ int _printf(char *str, ...)
 	/* Checks if str given is NULL  */
 	if (!str)
 		return (-1);
+
+	/* Automatic check of params array length  */
+	params_length = sizeof(params) / sizeof(params[0]);
 
 	for (i = 0; str && str[i]; i++)
 	{
@@ -36,7 +40,7 @@ int _printf(char *str, ...)
 			continue;
 		}
 		/* This for will execute if current char is '%'  */
-		for (j = 0; j < 4; j++)
+		for (j = 0; j < params_length; j++)
 		{
 			/* Checks if param is valid */
 			if (*params[j].param == str[i + 1])
@@ -47,7 +51,7 @@ int _printf(char *str, ...)
 			}
 		}
 		/* If param isn't valid, prints next character and continues */
-		if (j == 4)
+		if (j == params_length)
 		{
 			_putchar(str[i + 1]);
 			*count_p = *count_p + 1;

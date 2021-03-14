@@ -37,7 +37,6 @@ void int_process(int n, int *p)
  * @p: pointer to count variable
  *
  */
-
 void print_int(va_list args, int *p)
 {
 	int n = va_arg(args, int);
