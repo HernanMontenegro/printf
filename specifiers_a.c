@@ -2,7 +2,7 @@
 
 /**
 * unsigned_int_process - prints an unsigned int and keeps count
-* @args: List to get va_arg
+* @n: unsigned integer to print
 * @p: pointer to count variable
 * -------------------------------------------
 * Return: void
