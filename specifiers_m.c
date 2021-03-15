@@ -40,6 +40,7 @@ void int_process(int n, int *p)
 void print_int(va_list args, int *p)
 {
 	int n = va_arg(args, int);
+
 	int_process(n, p);
 }
 

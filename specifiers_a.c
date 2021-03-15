@@ -9,19 +9,19 @@
 */
 void unsigned_int_process(unsigned int n, int *p)
 {
-        int m;
+	int m;
 
 	/* checks if it's the end of the number */
-        if (n == 0)
-                return;
+	if (n == 0)
+		return;
 	/* Assignation and calulation */
-        m = n % 10;
-        n = n / 10;
+	m = n % 10;
+	n = n / 10;
 	/* recursive */
-        unsigned_int_process(n, p);
+	unsigned_int_process(n, p);
 	/* end, prints and counts */
-        _putchar(m + '0');
-        *p = *p + 1;
+	_putchar(m + '0');
+	*p = *p + 1;
 }
 
 /**
@@ -34,6 +34,7 @@ void unsigned_int_process(unsigned int n, int *p)
 void print_unsigned_int(va_list args, int *p)
 {
 	unsigned int n = va_arg(args, unsigned int);
+
 	unsigned_int_process(n, p);
 }
 
@@ -71,5 +72,6 @@ void octal_int_process(unsigned int n, int *p)
 void print_octal_int(va_list args, int *p)
 {
 	unsigned int n = va_arg(args, unsigned int);
+
 	octal_int_process(n, p);
 }
