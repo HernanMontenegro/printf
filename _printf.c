@@ -23,10 +23,13 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			*cnt_p = *cnt_p + 1;
 			continue;
 		}
-
+		/* checks if it's the end of the string */
 		if (!str[i + 1])
 			return (-1);
-
+		/* checks if there's a space */
+		for (; str[i] == ' '; i++)
+		{
+		}
 		/* This for will execute if current char is '%'  */
 		for (j = 0; j < p_len; j++)
 		{
