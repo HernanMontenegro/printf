@@ -27,7 +27,7 @@ int _printf(char *str, ...);
 
 void print_char(va_list, int *);
 void print_int(va_list, int *);
-void int_process(int, int *);
+void int_process(int, int *, int);
 void print_unsigned_int(va_list, int *);
 void unsigned_int_process(unsigned int, int *);
 void print_octal_int(va_list, int *);

@@ -7,26 +7,31 @@
  *
  * Return: d
  */
-void int_process(int n, int *p)
+void int_process(int n, int *p, int bool)
 {
 	int m;
 
-/* checks if n is negative */
+	/* checks if n is negative */
 	if (n < 0)
 	{
 		_putchar('-');
 		*p = *p + 1;
 		n = -n;
 	}
-/* checks if it's the end of the number */
+	/* checks if it's the end of the number */
 	if (n == 0)
+	{
+		if (bool)
+			_putchar(n + '0');
 		return;
-/* Assignation and calulation */
+	}
+	/* Assignation and calulation */
+	bool = 0;
 	m = n % 10;
 	n = n / 10;
-/* recursive */
-	int_process(n, p);
-/* end, prints and counts */
+	/* recursive */
+	int_process(n, p, bool);
+	/* end, prints and counts */
 	_putchar(m + '0');
 	*p = *p + 1;
 }
@@ -40,8 +45,9 @@ void int_process(int n, int *p)
 void print_int(va_list args, int *p)
 {
 	int n = va_arg(args, int);
+	int bool = 1;
 
-	int_process(n, p);
+	int_process(n, p, bool);
 }
 
 /**
