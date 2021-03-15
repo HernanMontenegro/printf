@@ -26,6 +26,7 @@ void print_unsigned_int(va_list, int *);
 void unsigned_int_process(unsigned int, int *);
 void print_octal_int(va_list, int *);
 void octal_int_process(unsigned int, int *);
+void str_process(char *, int *);
 void print_str(va_list, int *);
 
 #endif /* HEADER_H */

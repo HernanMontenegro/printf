@@ -43,6 +43,23 @@ void print_int(va_list args, int *p)
 	int_process(n, p);
 }
 
+/**
+* str_process - prints a string given
+* @str: string to print
+* @p: keep count
+* ---------------------------------
+* Return: void
+*/
+void str_process(char *str, int *p)
+{
+	int i;
+
+	for (i = 0; str[i]; i++)
+	{
+		_putchar(str[i]);
+		*p = *p + 1;
+	}
+}
 
 /**
  * print_str - prints a string
@@ -52,17 +69,12 @@ void print_int(va_list args, int *p)
  */
 void print_str(va_list args, int *p)
 {
-	int i;
 	char *str = va_arg(args, char *);
 
 	if (!str)
 		return;
 
-	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);
-		*p = *p + 1;
-	}
+	str_process(str, p);
 }
 
 /**
