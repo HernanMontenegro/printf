@@ -27,7 +27,7 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 		if (!str[i + 1])
 			return (-1);
 		/* checks if there's a space */
-		for (; str[i] == ' '; i++)
+		for (; str[i + 1] == ' '; i++)
 		{
 		}
 		/* This for will execute if current char is '%'  */
