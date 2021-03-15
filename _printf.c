@@ -10,7 +10,7 @@
 * ----------------------------------------------------------
 * Return: void
 */
-void print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
+int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 {
 	int i, j;
 
@@ -46,6 +46,7 @@ void print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			i++;
 		}
 	}
+	return (*cnt_p);
 }
 
 /**
@@ -77,7 +78,7 @@ int _printf(char *str, ...)
 	/* Automatic check of params array length  */
 	params_length = sizeof(params) / sizeof(params[0]);
 
-	print_proccesor(str, params_length, count_p, params, args);
+	count = print_proccesor(str, params_length, count_p, params, args);
 
 	va_end(args);
 
