@@ -7,7 +7,13 @@
 #include <stdarg.h>
 #include <stddef.h>
 
-/* Struct definition named param_manager, type: param  */
+/**
+* struct param_manager - specifiers profile
+* @param: specifier char
+* @f: specifier function
+* ----------------------------------
+* Description: Manages the specifiers profile
+*/
 typedef struct param_manager
 {
 	char *param;
