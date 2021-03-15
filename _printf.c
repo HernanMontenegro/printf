@@ -28,8 +28,11 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			return (-1);
 		/* checks if there's a space */
 		for (; str[i + 1] == ' '; i++)
-		{
-		}
+			if (str[i + 2] != ' ')
+			{
+				_putchar(' ');
+				*cnt_p = *cnt_p + 1;
+			}
 		/* This for will execute if current char is '%'  */
 		for (j = 0; j < p_len; j++)
 		{
