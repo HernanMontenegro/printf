@@ -45,6 +45,7 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 	}
 	if (j == p_len)
 	{
+		_putchar('%', cnt_p);
 		_putchar(str[i + 1], cnt_p);
 		i++;
 	}
