@@ -1,11 +1,12 @@
 #include "holberton.h"
 
 /**
- * print_process - prints an int and keeps count
+ * int_process - prints an int and keeps count
  * @n: Number to print
  * @p: pointer to count variable
+ * @bool: checks if is the first call
  *
- * Return: d
+ * Return: void
  */
 void int_process(int n, int *p, int bool)
 {
