@@ -1,8 +1,16 @@
 #include "holberton.h"
 
-
-
-void _print_proccesor(char *str, int params_length, int *count_p, param params[], va_list args)
+/**
+* print_proccesor - manages the print capacity in general
+* @str: the string input in _printf
+* @p_len: the size of our struct of specifiers
+* @cnt_p: pointer to keep track of characters amount
+* @ps: struct of specifiers and functions
+* @lst: list of arguments given in _printf
+* ----------------------------------------------------------
+* Return: void
+*/
+void print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 {
 	int i, j;
 
@@ -12,25 +20,25 @@ void _print_proccesor(char *str, int params_length, int *count_p, param params[]
 		if (str[i] != '%')
 		{
 			_putchar(str[i]);
-			*count_p = *count_p + 1;
+			*cnt_p = *cnt_p + 1;
 			continue;
 		}
 		/* This for will execute if current char is '%'  */
-		for (j = 0; j < params_length; j++)
+		for (j = 0; j < p_len; j++)
 		{
 			/* Checks if param is valid */
-			if (*params[j].param == str[i + 1])
+			if (*ps[j].param == str[i + 1])
 			{
-				params[j].f(args, count_p);
+				ps[j].f(lst, cnt_p);
 				i++;
 				break;
 			}
 		}
-		/* If param isn't valid, prints next character and continues */
-		if (j == params_length)
+		/* If param isn't valid, prints next character an continue*/
+		if (j == p_len)
 		{
 			_putchar(str[i + 1]);
-			*count_p = *count_p + 1;
+			*cnt_p = *cnt_p + 1;
 			i++;
 		}
 	}
@@ -52,8 +60,6 @@ int _printf(char *str, ...)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
-		{"u", print_unsigned_int},
-		{"o", print_octal_int},
 	};
 	int count = 0, params_length;
 	int *count_p = &count;
@@ -67,7 +73,7 @@ int _printf(char *str, ...)
 	/* Automatic check of params array length  */
 	params_length = sizeof(params) / sizeof(params[0]);
 
-	_print_proccesor(str, params_length, count_p, params, args);
+	print_proccesor(str, params_length, count_p, params, args);
 
 	va_end(args);
 
