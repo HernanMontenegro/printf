@@ -23,6 +23,10 @@ void print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			*cnt_p = *cnt_p + 1;
 			continue;
 		}
+
+		if (!str[i + 1])
+			return (-1);
+
 		/* This for will execute if current char is '%'  */
 		for (j = 0; j < p_len; j++)
 		{
