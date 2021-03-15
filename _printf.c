@@ -1,5 +1,39 @@
 #include "holberton.h"
 
+
+
+void _print_proccesor(char *str, int params_lenght, int *count_p, param params[], va_list args)
+{
+	for (i = 0; str && str[i]; i++)
+	{
+		/* If current char isn't '%' print normally  */
+		if (str[i] != '%')
+		{
+			_putchar(str[i]);
+			*count_p = *count_p + 1;
+			continue;
+		}
+		/* This for will execute if current char is '%'  */
+		for (j = 0; j < params_length; j++)
+		{
+			/* Checks if param is valid */
+			if (*params[j].param == str[i + 1])
+			{
+				params[j].f(args, count_p);
+				i++;
+				break;
+			}
+		}
+		/* If param isn't valid, prints next character and continues */
+		if (j == params_length)
+		{
+			_putchar(str[i + 1]);
+			*count_p = *count_p + 1;
+			i++;
+		}
+	}	
+}
+
 /**
 * _printf - The giant printf programmed by 2 guys very hard!!
 * @str: Basic string parameter
@@ -31,34 +65,8 @@ int _printf(char *str, ...)
 	/* Automatic check of params array length  */
 	params_length = sizeof(params) / sizeof(params[0]);
 
-	for (i = 0; str && str[i]; i++)
-	{
-		/* If current char isn't '%' print normally  */
-		if (str[i] != '%')
-		{
-			_putchar(str[i]);
-			*count_p = *count_p + 1;
-			continue;
-		}
-		/* This for will execute if current char is '%'  */
-		for (j = 0; j < params_length; j++)
-		{
-			/* Checks if param is valid */
-			if (*params[j].param == str[i + 1])
-			{
-				params[j].f(args, count_p);
-				i++;
-				break;
-			}
-		}
-		/* If param isn't valid, prints next character and continues */
-		if (j == params_length)
-		{
-			_putchar(str[i + 1]);
-			*count_p = *count_p + 1;
-			i++;
-		}
-	}
+	_print_proccesor(str, params_lenght, count_p, params, args);
+
 	va_end(args);
 
 	return (count);
