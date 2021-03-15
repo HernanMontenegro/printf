@@ -68,7 +68,7 @@ int _printf(char *str, ...)
 
 	/* Checks if str given is NULL  */
 	if (!str)
-		return (-1);
+		return (0);
 
 	/* Automatic check of params array length  */
 	params_length = sizeof(params) / sizeof(params[0]);
