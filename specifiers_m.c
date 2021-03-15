@@ -74,7 +74,7 @@ void print_str(va_list args, int *p)
 	char *str = va_arg(args, char *);
 
 	if (!str)
-		return;
+		str = "(null)";
 
 	str_process(str, p);
 }
