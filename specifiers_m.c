@@ -91,8 +91,5 @@ void print_char(va_list args, int *p)
 {
 	char c = va_arg(args, int);
 
-	if (!c)
-		c = ' ';
-
 	_putchar(c, p);
 }
