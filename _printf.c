@@ -1,6 +1,54 @@
 #include "holberton.h"
 
 /**
+* valid_spc - manage the % situation
+* @str: the string given
+* @i: current index
+* @p_len: specifiers array length
+* @cnt_p: keep count of characters printed
+* @ps: specifiers struct
+* @lst: the args list
+* -----------------------------------
+* Return: the index after proccess
+*/
+int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
+{
+	int j, bool = 0;
+
+	for (; str[i + 1] == ' '; i++)
+		if (str[i + 2] != ' ')
+			bool = 1;
+	for (j = 0; j < p_len; j++)
+	{
+		if (*ps[j].param == str[i + 1])
+		{
+			if (bool)
+			{
+				_putchar(' ');
+				*cnt_p = *cnt_p + 1;
+			}
+			ps[j].f(lst, cnt_p);
+			i++;
+			return (i);
+		}
+	}
+	if (j == p_len)
+	{
+		_putchar('%');
+		if (bool)
+		{
+			_putchar(' ');
+			*cnt_p = *cnt_p + 1;
+		}
+		_putchar(str[i + 1]);
+		*cnt_p = *cnt_p + 2;
+		i++;
+	}
+
+	return (i);
+}
+
+/**
 * print_proccesor - manages the print capacity in general
 * @str: the string input in _printf
 * @p_len: the size of our struct of specifiers
@@ -12,7 +60,7 @@
 */
 int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 {
-	int i, j, bool = 0;
+	int i;
 
 	for (i = 0; str && str[i]; i++)
 	{
@@ -24,32 +72,8 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 		}
 		if (!str[i + 1])
 			return (-1);
-		/* checks if there's a space */
-		for (; str[i + 1] == ' '; i++)
-			if (str[i + 2] != ' ')
-				bool = 1;
-		/* This for will execute if current char is '%'  */
-		for (j = 0; j < p_len; j++)
-		{
-			if (*ps[j].param == str[i + 1])
-			{
-				ps[j].f(lst, cnt_p);
-				i++;
-				break;
-			}
-		}
-		if (j == p_len)
-		{
-			_putchar('%');
-			if (bool)
-			{
-				_putchar(' ');
-				*cnt_p = *cnt_p + 1;
-			}
-			_putchar(str[i + 1]);
-			*cnt_p = *cnt_p + 2;
-			i++;
-		}
+
+		i = valid_spc(str, i, p_len, cnt_p, ps, lst);
 	}
 	return (*cnt_p);
 }
