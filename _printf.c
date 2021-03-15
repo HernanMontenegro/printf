@@ -13,6 +13,7 @@
 int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 {
 	int i, j;
+
 	for (i = 0; str && str[i]; i++)
 	{
 		if (str[i] != '%')
