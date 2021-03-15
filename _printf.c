@@ -12,7 +12,7 @@
 */
 int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 {
-	int i, j;
+	int i, j, bool = 0;
 
 	for (i = 0; str && str[i]; i++)
 	{
@@ -22,20 +22,15 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			*cnt_p = *cnt_p + 1;
 			continue;
 		}
-		/* checks if it's the end of the string */
 		if (!str[i + 1])
 			return (-1);
 		/* checks if there's a space */
 		for (; str[i + 1] == ' '; i++)
 			if (str[i + 2] != ' ')
-			{
-				_putchar(' ');
-				*cnt_p = *cnt_p + 1;
-			}
+				bool = 1;
 		/* This for will execute if current char is '%'  */
 		for (j = 0; j < p_len; j++)
 		{
-			/* Checks if param is valid */
 			if (*ps[j].param == str[i + 1])
 			{
 				ps[j].f(lst, cnt_p);
@@ -43,11 +38,16 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 				break;
 			}
 		}
-		/* If param isn't valid, prints next character an continue*/
 		if (j == p_len)
 		{
+			_putchar('%');
+			if (bool)
+			{
+				_putchar(' ');
+				*cnt_p = *cnt_p + 1;
+			}
 			_putchar(str[i + 1]);
-			*cnt_p = *cnt_p + 1;
+			*cnt_p = *cnt_p + 2;
 			i++;
 		}
 	}
