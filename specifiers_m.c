@@ -14,15 +14,14 @@ void int_process(int n, int *p, int bool)
 	/* checks if n is negative */
 	if (n < 0)
 	{
-		_putchar('-');
-		*p = *p + 1;
+		_putchar('-', p);
 		n = -n;
 	}
 	/* checks if it's the end of the number */
 	if (n == 0)
 	{
 		if (bool)
-			_putchar(n + '0');
+			_putchar(n + '0', p);
 		return;
 	}
 	/* Assignation and calulation */
@@ -32,8 +31,7 @@ void int_process(int n, int *p, int bool)
 	/* recursive */
 	int_process(n, p, bool);
 	/* end, prints and counts */
-	_putchar(m + '0');
-	*p = *p + 1;
+	_putchar(m + '0', p);
 }
 
 /**
@@ -62,10 +60,7 @@ void str_process(char *str, int *p)
 	int i;
 
 	for (i = 0; str[i]; i++)
-	{
-		_putchar(str[i]);
-		*p = *p + 1;
-	}
+		_putchar(str[i], p);
 }
 
 /**
@@ -95,6 +90,5 @@ void print_char(va_list args, int *p)
 {
 	char c = va_arg(args, int);
 
-	_putchar(c);
-	*p = *p + 1;
+	_putchar(c, p);
 }

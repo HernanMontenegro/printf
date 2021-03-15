@@ -13,16 +13,25 @@
 */
 int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 {
-	int j, bool = 0;
+	int j;
 
-	for (; str[i + 1] == ' '; i++);
+	for (; str[i + 1] == ' '; i++)
 		if (str[i + 2] != ' ')
 		{
-			if (str[i + 2] == ´'%')
-				_putchar(str[i + 2], cnt_P);
+			if (str[i + 2] == '%')
+			{
+				_putchar(str[i + 2], cnt_p);
+				i += 3;
+				break;
+			}
 			_putchar(' ', cnt_p);
 		}
 
+	if (str[i] != '%')
+	{
+		_putchar(str[i], cnt_p);
+		return (i);
+	}
 	for (j = 0; j < p_len; j++)
 	{
 		if (*ps[j].param == str[i + 1])

@@ -20,8 +20,7 @@ void unsigned_int_process(unsigned int n, int *p)
 	/* recursive */
 	unsigned_int_process(n, p);
 	/* end, prints and counts */
-	_putchar(m + '0');
-	*p = *p + 1;
+	_putchar(m + '0', p);
 }
 
 /**
@@ -58,8 +57,7 @@ void octal_int_process(unsigned int n, int *p)
 	/* recursive */
 	octal_int_process(n, p);
 	/* end, prints and counts */
-	_putchar(m + '0');
-	*p = *p + 1;
+	_putchar(m + '0', p);
 }
 
 /**
