@@ -15,18 +15,18 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 {
 	int j, bool = 0;
 
-	for (; str[i + 1] == ' '; i++)
+	for (; str[i + 1] == ' '; i++);
 		if (str[i + 2] != ' ')
-			bool = 1;
+		{
+			if (str[i + 2] == ´'%')
+				_putchar(str[i + 2], cnt_P);
+			_putchar(' ', cnt_p);
+		}
+
 	for (j = 0; j < p_len; j++)
 	{
 		if (*ps[j].param == str[i + 1])
 		{
-			if (bool)
-			{
-				_putchar(' ');
-				*cnt_p = *cnt_p + 1;
-			}
 			ps[j].f(lst, cnt_p);
 			i++;
 			return (i);
@@ -34,14 +34,7 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 	}
 	if (j == p_len)
 	{
-		_putchar('%');
-		if (bool)
-		{
-			_putchar(' ');
-			*cnt_p = *cnt_p + 1;
-		}
-		_putchar(str[i + 1]);
-		*cnt_p = *cnt_p + 2;
+		_putchar(str[i + 1], cnt_p);
 		i++;
 	}
 
@@ -66,8 +59,7 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 	{
 		if (str[i] != '%')
 		{
-			_putchar(str[i]);
-			*cnt_p = *cnt_p + 1;
+			_putchar(str[i], cnt_p);
 			continue;
 		}
 		if (!str[i + 1])

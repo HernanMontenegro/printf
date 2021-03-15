@@ -22,7 +22,7 @@ typedef struct param_manager
 
 /* Prototypes  */
 
-int _putchar(char c);
+int _putchar(char c, int *);
 int _printf(char *str, ...);
 
 void print_char(va_list, int *);
