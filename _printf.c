@@ -2,8 +2,10 @@
 
 
 
-void _print_proccesor(char *str, int params_lenght, int *count_p, param params[], va_list args)
+void _print_proccesor(char *str, int params_length, int *count_p, param params[], va_list args)
 {
+	int i, j;
+
 	for (i = 0; str && str[i]; i++)
 	{
 		/* If current char isn't '%' print normally  */
@@ -31,7 +33,7 @@ void _print_proccesor(char *str, int params_lenght, int *count_p, param params[]
 			*count_p = *count_p + 1;
 			i++;
 		}
-	}	
+	}
 }
 
 /**
@@ -53,7 +55,7 @@ int _printf(char *str, ...)
 		{"u", print_unsigned_int},
 		{"o", print_octal_int},
 	};
-	int i, j, count = 0, params_length;
+	int count = 0, params_length;
 	int *count_p = &count;
 
 	va_start(args, str);
@@ -65,7 +67,7 @@ int _printf(char *str, ...)
 	/* Automatic check of params array length  */
 	params_length = sizeof(params) / sizeof(params[0]);
 
-	_print_proccesor(str, params_lenght, count_p, params, args);
+	_print_proccesor(str, params_length, count_p, params, args);
 
 	va_end(args);
 
