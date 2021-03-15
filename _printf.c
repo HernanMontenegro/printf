@@ -18,6 +18,8 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 	for (; str[i + 1] == ' '; i++)
 		if (str[i + 2] != ' ')
 		{
+			if (!str[i + 2])
+				return (-1);
 			if (str[i + 2] == '%')
 			{
 				_putchar(str[i + 2], cnt_p);
@@ -75,6 +77,8 @@ int print_proccesor(char *str, int p_len, int *cnt_p, param ps[], va_list lst)
 			return (-1);
 
 		i = valid_spc(str, i, p_len, cnt_p, ps, lst);
+		if (i == -1)
+			return (i);
 	}
 	return (*cnt_p);
 }
