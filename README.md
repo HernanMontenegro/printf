@@ -42,4 +42,5 @@ In this project we are trying to create our own printf function from the standar
 			- print_reverse
 			- print_rot13
 # -------------- Authors --------------
-### Hernan Montenegro - DreadZitoDev Daniel Millan - KsualBoy
+### Hernan Montenegro - DreadZitoDev
+### Daniel Millan - KsualBoy
