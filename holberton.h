@@ -42,7 +42,14 @@ void print_str(va_list, int *);
 
 void binary_process(unsigned int, int *);
 void print_binary(va_list, int *);
+
+void un_int_process(unsigned int, int *);
+void print_u_int(va_list, int *);
 void octal_process(unsigned int, int *);
 void print_octal(va_list, int *);
+void hexxa_process(unsigned int, int *);
+void print_hexxa(va_list, int *);
+void hexa_process(unsigned int, int *);
+void print_hexa(va_list, int *);
 
 #endif /* HEADER_H */

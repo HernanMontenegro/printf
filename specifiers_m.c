@@ -4,7 +4,6 @@
  * int_process - prints an int and keeps count
  * @n: Number to print
  * @p: pointer to count variable
- * @bool: checks if is the first call
  *
  * Return: void
  */
