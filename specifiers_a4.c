@@ -37,8 +37,8 @@ void print_reverse(va_list args, int *p)
 * print_rot13 - prints a string in rot13
 * @args: list variable that stores the string
 * @p: pointer to count variable
-*
-* Returns: an int
+* ---------------------------------
+* Returns: void
 */
 
 void print_rot13(va_list args, int *p)
