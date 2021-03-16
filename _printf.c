@@ -26,7 +26,7 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 	{
 		if (*ps[j].param == str[i + 1])
 		{
-			if (str[i] == ' ')
+			if (str[i] == ' ' && str[i + 1] != '%')
 				_putchar(' ', cnt_p);
 			ps[j].f(lst, cnt_p);
 			i++;
