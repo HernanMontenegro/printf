@@ -8,5 +8,5 @@
 */
 void print_percent(__attribute__((unused)) va_list args, int *p)
 {
-        _putchar('%', p);
+	_putchar('%', p);
 }
