@@ -13,9 +13,12 @@ In this project we are trying to create our own printf function from the standar
  - %X - UPPERCASE hexadecimal format
  - %r - reverse string format
  - %R - rot13 format
+
 # Files content
-### _printf.c : *contains the main function* _putchar : *contains our print method* holberton.h 
-### : *has all our header data*
+### _printf.c : *contains the main function* 
+### _putchar : *contains our print method* 
+### holberton.h : *has all our header data*
+
 ### man_3_printf : *contains the man page* specifiers_m.c :
 			- int_process
 			- print_int
