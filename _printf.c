@@ -36,6 +36,9 @@ int valid_spc(char *str, int i, int p_len, int *cnt_p, param ps[], va_list lst)
 
 	if (j == p_len)
 	{
+		_putchar('%', cnt_p);
+		if (str[i] == ' ')
+			_putchar(' ', cnt_p);
 		_putchar(str[i + 1], cnt_p);
 		i++;
 	}
@@ -90,6 +93,7 @@ int _printf(char *str, ...)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
+		{"%", print_percent},
 	};
 	int count = 0, params_length;
 	int *count_p = &count;
