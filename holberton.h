@@ -52,4 +52,7 @@ void print_hexxa(va_list, int *);
 void hexa_process(unsigned int, int *);
 void print_hexa(va_list, int *);
 
+void reverse_process(char *, int *);
+void print_reverse(va_list, int *);
+
 #endif /* HEADER_H */

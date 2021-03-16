@@ -99,6 +99,7 @@ int _printf(char *str, ...)
 		{"o", print_octal},
 		{"X", print_hexxa},
 		{"x", print_hexa},
+		{"r", print_reverse},
 	};
 	int count = 0, params_length;
 	int *count_p = &count;
