@@ -20,10 +20,13 @@ typedef struct param_manager
 	void (*f)(va_list args, int *count_p);
 } param;
 
-/* Prototypes  */
+/*======== Prototypes =========*/
 
 int _putchar(char c, int *);
 int _printf(char *str, ...);
+
+/* Mandatory  */
+
 void print_char(va_list, int *);
 void print_percent(va_list, int *);
 void print_int(va_list, int *);
@@ -34,5 +37,10 @@ void print_octal_int(va_list, int *);
 void octal_int_process(unsigned int, int *);
 void str_process(char *, int *);
 void print_str(va_list, int *);
+
+/* Advanced  */
+
+void binary_process(int, int *);
+void print_binary(va_list, int *);
 
 #endif /* HEADER_H */
