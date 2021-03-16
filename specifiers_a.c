@@ -9,18 +9,12 @@
  *
  * Return: void
  */
-void binary_process(int n, int *p)
+void binary_process(unsigned int n, int *p)
 {
 	unsigned int m;
 
-	/* checks if n is negative */
-	if (n < 0)
-	{
-		_putchar('-', p);
-		m = -n;
-	}
-	else
-		m = n;
+	m = n;
+
 	/* recursive */
 	if (m / 2)
 		binary_process((m / 2), p);
@@ -36,7 +30,7 @@ void binary_process(int n, int *p)
  */
 void print_binary(va_list args, int *p)
 {
-	int n = va_arg(args, int);
+	int n = va_arg(args, unsigned int);
 
 	binary_process(n, p);
 }

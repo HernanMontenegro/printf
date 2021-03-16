@@ -40,7 +40,7 @@ void print_str(va_list, int *);
 
 /* Advanced  */
 
-void binary_process(int, int *);
+void binary_process(unsigned int, int *);
 void print_binary(va_list, int *);
 
 #endif /* HEADER_H */
