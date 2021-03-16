@@ -95,6 +95,7 @@ int _printf(char *str, ...)
 		{"i", print_int},
 		{"%", print_percent},
 		{"b", print_binary},
+		{"o", print_octal},
 	};
 	int count = 0, params_length;
 	int *count_p = &count;
