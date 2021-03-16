@@ -26,6 +26,7 @@ int _putchar(char c, int *);
 int _printf(char *str, ...);
 
 void print_char(va_list, int *);
+void print_percent(va_list, int *);
 void print_int(va_list, int *);
 void int_process(int, int *, int);
 void print_unsigned_int(va_list, int *);
