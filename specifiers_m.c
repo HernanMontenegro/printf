@@ -10,17 +10,21 @@
  */
 void int_process(int n, int *p)
 {
+	unsigned int m;
+
 	/* checks if n is negative */
 	if (n < 0)
 	{
 		_putchar('-', p);
-		n = -n;
+		m = -n;
 	}
+	else
+		m = n;
 	/* recursive */
-	if (n / 10)
-		int_process((n / 10), p);
+	if (m / 10)
+		int_process((m / 10), p);
 	/* end, prints and counts */
-	_putchar((n % 10) + '0', p);
+	_putchar((m % 10) + '0', p);
 }
 
 /**
