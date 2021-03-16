@@ -58,6 +58,7 @@ void print_rot13(va_list args, int *p)
 		{
 			if (let[j] == str[i])
 			{
+				_putchar(str[i], p);
 				_putchar(cod[j], p);
 				break;
 			}
