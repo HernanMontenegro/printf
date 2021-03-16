@@ -32,3 +32,37 @@ void print_reverse(va_list args, int *p)
 
 	reverse_process(str, p);
 }
+
+/**
+* print_rot13 - prints a string in rot13
+* @args: list variable that stores the string
+* @p: pointer to count variable
+*
+* Returns: an int
+*/
+
+void print_rot13(va_list args, int *p)
+{
+	char *str = va_arg(args, char *);
+	int i, j;
+
+	char let[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char cod[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	if (!str)
+		*p = -1;
+
+	for (i = 0; str[i]; i++)
+	{
+		for (j = 0; let[j]; j++)
+		{
+			if (let[j] == str[i])
+			{
+				_putchar(cod[j], p);
+				break;
+			}
+		if (!let[j])
+			_putchar(str[i], p);
+		}
+	}
+}

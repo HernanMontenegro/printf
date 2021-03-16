@@ -100,6 +100,7 @@ int _printf(char *str, ...)
 		{"X", print_hexxa},
 		{"x", print_hexa},
 		{"r", print_reverse},
+		{"R", print_rot13},
 	};
 	int count = 0, params_length;
 	int *count_p = &count;

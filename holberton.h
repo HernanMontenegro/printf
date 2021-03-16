@@ -55,4 +55,6 @@ void print_hexa(va_list, int *);
 void reverse_process(char *, int *);
 void print_reverse(va_list, int *);
 
+void print_rot13(va_list, int *);
+
 #endif /* HEADER_H */
